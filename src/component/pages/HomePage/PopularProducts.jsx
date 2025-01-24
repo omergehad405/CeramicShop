@@ -5,46 +5,46 @@ import { ProductsContext } from "../../Context/ProductsContext";
 function PopularProducts() {
   const [products, setProducts] = useState([
     {
-      productId: 1,
-      ProductImg: "./shop/ceramic-cup-01-300x300.jpg",
-      productTitle: "Ceramic Cup",
-      productAfterSale: 189.0,
-      productBeforeSale: 237.0,
+      id: 1,
+      mainImage: "./shop/ceramic-cup-01-300x300.jpg",
+      name: "Ceramic Cup",
+      priceAfterSale: 189.0,
+      priceBeforeSale: 237.0,
     },
     {
-      productId: 2,
-      ProductImg: "./shop/ceramic-planter-01-300x300.jpg",
-      productTitle: "Ceramic Planter",
-      productAfterSale: 299.0,
-      productBeforeSale: 349.0,
+      id: 2,
+      mainImage: "./shop/ceramic-planter-01-300x300.jpg",
+      name: "Ceramic Planter",
+      priceAfterSale: 299.0,
+      priceBeforeSale: 349.0,
     },
     {
-      productId: 3,
-      ProductImg: "./shop/product-01-300x300.jpg",
-      productTitle: "Ceramic Plates",
-      productAfterSale: 119.0,
-      productBeforeSale: 179.0,
+      id: 3,
+      mainImage: "./shop/product-01-300x300.jpg",
+      name: "Ceramic Plates",
+      priceAfterSale: 119.0,
+      priceBeforeSale: 179.0,
     },
     {
-      productId: 4,
-      ProductImg: "./shop/product-02-300x300.jpg",
-      productTitle: "Ceramic Plates and Bowls",
-      productAfterSale: 209.0,
-      productBeforeSale: 249.0,
+      id: 4,
+      mainImage: "./shop/product-02-300x300.jpg",
+      name: "Ceramic Plates and Bowls",
+      priceAfterSale: 209.0,
+      priceBeforeSale: 249.0,
     },
     {
-      productId: 5,
-      ProductImg: "./shop/product-07-300x300.jpg",
-      productTitle: "Ceramic Plates and Spoons",
-      productAfterSale: 299.0,
-      productBeforeSale: 349.0,
+      id: 5,
+      mainImage: "./shop/product-07-300x300.jpg",
+      name: "Ceramic Plates and Spoons",
+      priceAfterSale: 299.0,
+      priceBeforeSale: 349.0,
     },
     {
-      productId: 6,
-      ProductImg: "./shop/contact-01-300x300.jpg",
-      productTitle: "Ceramic Vases and Planters",
-      productAfterSale: 217.0,
-      productBeforeSale: 347.0,
+      id: 6,
+      mainImage: "./shop/contact-01-300x300.jpg",
+      name: "Ceramic Vases and Planters",
+      priceAfterSale: 217.0,
+      priceBeforeSale: 347.0,
     },
   ]);
   const { addToCart } = useContext(ProductsContext);
@@ -59,10 +59,10 @@ function PopularProducts() {
       <div className="container mx-auto flex flex-wrap justify-center gap-5 md:gap-10 items-center mt-10 ">
         {products.map((product) => (
           <div
-            key={product.productId}
+            key={product.id}
             className="w-[400px] h-[570px] md:w-[150px] md:h-[300px] relative "
           >
-            <img src={product.ProductImg} alt="" className="w-full" />
+            <img src={product.mainImage} alt="" className="w-full" />
             <p className="absolute top-5 left-5 md:left-2 bg-white px-3 rounded-full">
               sale!
             </p>
@@ -70,6 +70,7 @@ function PopularProducts() {
               className="bg-white p-2 rounded-full top-5 text-main right-5 md:right-2 absolute"
               onClick={() => {
                 addToCart(product);
+                console.log(product);
               }}
             >
               <FaShoppingCart />
@@ -77,16 +78,16 @@ function PopularProducts() {
             <div className="pt-5 ">
               <h6 className="text-[#A4A8A7] pb-2">Ceramic</h6>
               <Link
-                to={`/CeramicShop/shop/product/${product.productId}`}
+                to={`/CeramicShop/shop/product/${product.id}`}
                 className="text-2xl md:text-lg text-main"
               >
-                {product.productTitle}
+                {product.name}
               </Link>
               <div className="pt-3 font-bold flex gap-2 text-xl">
                 <span className="text-[#A4A8A7] line-through">
-                  ${product.productBeforeSale}.00
+                  ${product.priceBeforeSale}.00
                 </span>
-                <span>${product.productAfterSale}.00</span>
+                <span>${product.priceAfterSale}.00</span>
               </div>
             </div>
           </div>

@@ -77,7 +77,7 @@ function PopularProducts() {
             <div className="pt-5 ">
               <h6 className="text-[#A4A8A7] pb-2">Ceramic</h6>
               <Link
-                to={`/profiles/${product.productId}`}
+                to={`/CeramicShop/shop/product/${product.productId}`}
                 className="text-2xl text-main"
               >
                 {product.productTitle}

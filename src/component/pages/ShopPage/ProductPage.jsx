@@ -11,7 +11,7 @@ function ProductPage() {
   }, []);
 
   const { ProductId } = useParams();
-  const { products } = useContext(ProductsContext);
+  const { products, addToCart } = useContext(ProductsContext);
   const [section, setSection] = useState("description");
   const [reviews, setReviews] = useState([]);
   const [relatedProducts, setRelatedProducts] = useState([
@@ -147,7 +147,12 @@ function ProductPage() {
                 +
               </button>
             </div>
-            <button className="uppercase py-2 px-10 text-white transition duration-500 font-bold bg-main border-2  hover:text-main hover:bg-white hover:border-main">
+            <button
+              onClick={() => {
+                addToCart(product);
+              }}
+              className="uppercase py-2 px-10 text-white transition duration-500 font-bold bg-main border-2  hover:text-main hover:bg-white hover:border-main"
+            >
               Add To Cart
             </button>
           </div>

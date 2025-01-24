@@ -11,8 +11,8 @@ function Header() {
   const [showCart, setShowCart] = useState(false);
   const { cart, removeProduct, increaseQuantity, decreaseQuantity } =
     useContext(ProductsContext);
-  const isCartPage = window.location.pathname === "/cart";
-  const isCheckoutPage = window.location.pathname === "/checkout";
+  const isCartPage = window.location.pathname === "/CeramicShop/cart";
+  const isCheckoutPage = window.location.pathname === "/CeramicShop/checkout";
   return (
     <div>
       <div className="md:hidden flex items-center justify-between px-10 py-10 bg-main">
@@ -24,7 +24,7 @@ function Header() {
           <li>
             <Link
               className="text-white hover:text-black transition-text duration-700 ease-in-out"
-              to="/"
+              to="/CeramicShop/"
             >
               Home
             </Link>
@@ -32,7 +32,7 @@ function Header() {
           <li>
             <Link
               className="text-white hover:text-black transition-text duration-700 ease-in-out"
-              to="/about"
+              to="/CeramicShop/about"
             >
               About
             </Link>
@@ -40,7 +40,7 @@ function Header() {
           <li>
             <Link
               className="text-white hover:text-black transition-text duration-700 ease-in-out"
-              to="/shop"
+              to="/CeramicShop/shop"
             >
               Shop
             </Link>
@@ -48,7 +48,7 @@ function Header() {
           <li>
             <Link
               className="text-white hover:text-black transition-text duration-700 ease-in-out"
-              to="/contact"
+              to="/CeramicShop/contact"
             >
               Contact
             </Link>
@@ -132,13 +132,13 @@ function Header() {
                 <div>
                   <div className="flex flex-col items-center mt-10  fixed top-[45rem]">
                     <Link
-                      to="/cart"
+                      to="/CeramicShop/cart"
                       className="w-[510px] hover:text-white hover:bg-main transtition-text duration-500 text-center py-2 text-main border border-main my-2 font-bold uppercase tracking-widest"
                     >
                       view cart
                     </Link>
                     <Link
-                      to="/checkout"
+                      to="/CeramicShop/checkout"
                       className="w-[510px] hover:text-white hover:bg-main transtition-text duration-500 text-center py-2 text-main border border-main my-2 font-bold uppercase tracking-widest"
                     >
                       checkout
@@ -180,7 +180,7 @@ function Header() {
             </NavLink>
           </li>
           <li className="w-full pl-5 py-3">
-            <NavLink className="text-black" to="/shop">
+            <NavLink className="text-black" to="/CeramicShop/shop">
               Shop
             </NavLink>
           </li>

@@ -25,7 +25,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link className="text-main" to="/shop">
+              <Link className="text-main" to="/CeramicShop/shop">
                 Shop
               </Link>
             </li>

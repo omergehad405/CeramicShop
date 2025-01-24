@@ -29,7 +29,7 @@ function Cart() {
 
             <button className="mt-10">
               <Link
-                to="/shop"
+                to="/CeramicShop/shop"
                 className=" hover:text-white hover:bg-main transtition-text duration-500 text-center py-3 text-main border border-main my-2 font-bold uppercase tracking-widest px-10"
               >
                 Back To shop

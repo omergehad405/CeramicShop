@@ -15,12 +15,12 @@ function Footer() {
         <div>
           <ul className="flex flex-wrap md:flex-col md:justify-evenly items-center md:space-x-0 space-x-10 uppercase">
             <li>
-              <Link className="text-main" to="/">
+              <Link className="text-main" to="/CeramicShop/">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="text-main" to="/about">
+              <Link className="text-main" to="/CeramicShop//about">
                 About
               </Link>
             </li>
@@ -30,7 +30,7 @@ function Footer() {
               </Link>
             </li>
             <li>
-              <Link className="text-main" to="/contact">
+              <Link className="text-main" to="/CeramicShop/contact">
                 Contact
               </Link>
             </li>

@@ -8,7 +8,7 @@ import AimingTo from "./AimingTo";
 
 function AboutPage() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <Hero />
       <Ourstory />

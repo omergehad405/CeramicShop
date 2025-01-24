@@ -11,21 +11,14 @@ function Ourstory() {
         </h1>
       </div>
       <div className="">
-        <p className="leading-8 text-lg text-gray-500 lg:text-base md:text-sm">
+        <p className="leading-8 text-lg text-gray-500 w-[600px] md:w-full max-w-full lg:text-base md:text-sm">
           Step into the world of CeramicShop, where we’re dedicated to crafting{" "}
-          <br />
           elegant, functional ceramics that elevate your everyday life. Our{" "}
-          <br />
           journey is a testament to the artistry and craftsmanship that infuse{" "}
-          <br />
           each unique piece. Discover our story, meet the talented artisans who{" "}
-          <br />
           bring these creations to life, and experience the exceptional beauty{" "}
-          <br />
           that our ceramics add to your surroundings. Explore the heart and soul{" "}
-          <br />
           of our store, where every piece is a work of art, designed to make{" "}
-          <br />
           your moments more beautiful and special.
         </p>
       </div>

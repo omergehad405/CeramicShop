@@ -6,7 +6,7 @@ import FAQs from "./FAQs";
 import Footer from "../../Footer";
 function ContactPage() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <Hero />
       <GetInTouch />

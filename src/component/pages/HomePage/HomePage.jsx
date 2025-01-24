@@ -11,7 +11,7 @@ import Footer from "../../Footer";
 
 function HomePage() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Header />
       <Hero />
       <About />
@@ -21,7 +21,7 @@ function HomePage() {
       <Trending />
       <Testimonial />
       <Footer />
-    </>
+    </div>
   );
 }
 

@@ -191,8 +191,8 @@ function Header() {
           </li>
         </ul>
 
-        <div className="flex  space-x-5">
-          <div className="relative">
+        <div className="flex space-x-5">
+          <div className="relative ">
             <button
               className="text-white text-lg"
               onClick={() => setShowCart(true)}

@@ -11,7 +11,7 @@ function Hero() {
           Elevate Your Space with Ceramic Elegance.
         </h1>
         <p className="text-2xl capitalize pb-10">Starting from just $149.00</p>
-        <button className="uppercase py-3 px-10 text-white transition duration-500 font-bold bg-main border border-2  hover:text-main hover:bg-white hover:border-main">
+        <button className="uppercase py-3 px-10 text-white transition duration-500 font-bold bg-main border-2  hover:text-main hover:bg-white hover:border-main">
           shop now
         </button>
       </div>

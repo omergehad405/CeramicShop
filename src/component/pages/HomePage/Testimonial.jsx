@@ -11,9 +11,9 @@ function Testimonial() {
             What Our Customers Say
           </h1>
 
-          <div className="flex justify-center gap-5 items-center mt-10 flex-wrap ">
+          <div className="flex justify-center gap-5 items-center mt-10 flex-wrap px-5">
             <div className="bg-white p-10 md:p-5 w-[550px] md:w-[400px] md:text-left">
-              <div className="text-[#FB8C24] flex text-2xl gap ">
+              <div className="text-[#FB8C24] flex text-2xl md:text-lg gap ">
                 <IoIosStar />
                 <IoIosStar />
                 <IoIosStar />
@@ -21,7 +21,7 @@ function Testimonial() {
                 <IoIosStar />
               </div>
 
-              <p className="text-[#596160] py-3">
+              <p className="text-[#596160] py-3 md:text-sm">
                 Click edit button to change this text. Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
                 ullamcorper mattis, pulvinar dapibus leo.
@@ -40,7 +40,7 @@ function Testimonial() {
               </div>
             </div>
             <div className="bg-white p-10 md:p-5 w-[550px] md:w-[400px] md:text-left">
-              <div className="text-[#FB8C24] flex text-2xl gap ">
+              <div className="text-[#FB8C24] flex text-2xl md:text-lg gap ">
                 <IoIosStar />
                 <IoIosStar />
                 <IoIosStar />
@@ -48,7 +48,7 @@ function Testimonial() {
                 <IoIosStar />
               </div>
 
-              <p className="text-[#596160] py-3">
+              <p className="text-[#596160] py-3 md:text-sm">
                 Click edit button to change this text. Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
                 ullamcorper mattis, pulvinar dapibus leo.
@@ -69,12 +69,13 @@ function Testimonial() {
           </div>
         </div>
       </div>
+
       <div className="flex lg:flex-col ">
         <img src="./footer-cta.jpg" alt="" className="w-[50%] lg:w-full" />
-        <div className="bg-main p-10 text-white w-[50%] lg:w-full md:h-[400px] h-[550px] ">
-          <div className="md:text-center relative w-full h-full ">
+        <div className="bg-main px-20 text-white w-[50%] lg:w-full md:h-[400px] h-[550px] ">
+          <div className="md:text-center relative w-full h-full px-5 ">
             <div className="absolute top-[50%] transform translate-y-[-50%] lg:left-[50%] lg:translate-x-[-50%]">
-              <h1 className="text-5xl lg:text-3xl leading-snug pb-10 w-[550px] lg:w-[450px]">
+              <h1 className="text-5xl lg:text-2xl leading-snug pb-10 w-[550px] lg:w-[450px]">
                 Uncover the World of Ceramic Artistry Start Your Journey Here!
               </h1>
               <button className="uppercase py-3 px-10 text-white transition duration-500 font-bold bg-main border border-2  hover:text-main hover:bg-white hover:border-main">

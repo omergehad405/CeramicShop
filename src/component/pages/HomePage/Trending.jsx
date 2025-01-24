@@ -40,14 +40,14 @@ function Trending() {
         {products.map((product) => (
           <div
             key={product.productId}
-            className="w-[400px] h-[570px] relative "
+            className="w-[400px] h-[570px] md:w-[150px] md:h-[300px] relative "
           >
             <img src={product.ProductImg} alt="" className="w-full" />
-            <p className="absolute top-5 left-5 bg-white px-3 rounded-full">
+            <p className="absolute top-5 left-5 md:left-2 bg-white px-3 rounded-full">
               sale!
             </p>
             <button
-              className="bg-white p-2 rounded-full top-5 text-main right-5 absolute"
+              className="bg-white p-2 rounded-full top-5 text-main right-5 md:right-2 absolute"
               onClick={() => {
                 addToCart(product);
               }}
@@ -57,8 +57,8 @@ function Trending() {
             <div className="pt-5 ">
               <h6 className="text-[#A4A8A7] pb-2">Ceramic</h6>
               <Link
-                to={`/profiles/${product.productId}`}
-                className="text-2xl text-main"
+                to={`/CeramicShop/shop/product/${product.productId}`}
+                className="text-2xl md:text-lg text-main"
               >
                 {product.productTitle}
               </Link>

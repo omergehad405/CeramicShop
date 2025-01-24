@@ -3,10 +3,10 @@ import React from "react";
 function ProductsCategory() {
   return (
     <div className="bg-[#F1F4F1]">
-      <div className="md:container w-[70%]  mx-auto py-20 flex flex-wrap items-center justify-evenly md:justify-center gap-10 md:text-center">
+      <div className="md:container w-[70%] mx-auto py-20 flex flex-wrap items-center justify-evenly md:justify-center gap-10 md:gap-0 md:text-center">
         <div className="w-[40%] md:w-[70%]">
           <h5 className="text-main">THE BEST OR CERMAICS</h5>
-          <h1 className="text-5xl py-5 text-[#424B4A]">
+          <h1 className="text-5xl md:text-3xl py-5 text-[#424B4A]">
             Our Products Category
           </h1>
           <p className="leading-normal pb-5 text-[#424B4A]">
@@ -25,6 +25,7 @@ function ProductsCategory() {
             </div>
           </div>
         </div>
+
         <div className="w-[40%] md:w-[70%] ">
           <div className="relative my-5">
             <img src="./home/category-02.jpg" alt="" />

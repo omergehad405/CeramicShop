@@ -187,7 +187,7 @@ function Cart() {
 
                 <button className="w-[350px] max-w-full mx-auto absolute bottom-10 left-[50%] transform -translate-x-1/2">
                   <Link
-                    to="/checkout"
+                    to="/CeramicShop/checkout"
                     className=" hover:text-white hover:bg-main transtition-text duration-500 text-center py-5 text-main border border-main my-2 font-bold uppercase tracking-widest px-5"
                   >
                     proceed to checkout

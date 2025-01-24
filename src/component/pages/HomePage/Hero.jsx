@@ -7,7 +7,7 @@ function Hero() {
         <h6 className="uppercase text-sm pb-10 md:pb-5">
           Welcome to Ceramic Shop
         </h6>
-        <h1 className="capitalize font-bold text-6xl leading-tight pb-5 md:text-5xl">
+        <h1 className="capitalize font-bold text-6xl leading-tight pb-5 md:text-3xl">
           Elevate Your Space with Ceramic Elegance.
         </h1>
         <p className="text-2xl capitalize pb-10">Starting from just $149.00</p>
@@ -16,8 +16,8 @@ function Hero() {
         </button>
       </div>
       <div className="md:w-full">
-        <div className="relative  mx-auto pt-10 ">
-          <img src="./home/hero-01.jpg" className="w-full" alt="" />
+        <div className="relative mx-auto pt-10 ">
+          <img src="./home/hero-01.jpg" className="max-w-full md:w-[250px] mx-auto" alt="" />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../../Header";
 import Footer from "../../Footer";
 import { ProductsContext } from "../../Context/ProductsContext";
@@ -7,6 +7,92 @@ import { Link } from "react-router";
 
 function ShopPage() {
   const { products, addToCart } = useContext(ProductsContext);
+  // const [products, setProducts] = useState([
+  //   {
+  //     id: 1,
+  //     name: "Ceramic Bottles",
+  //     mainImage: "./shop/product-09-300x300.jpg",
+  //     priceAfterSale: 249.0,
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Ceramic Cup",
+  //     mainImage: "./shop/ceramic-cup-01-300x300.jpg",
+  //     priceAfterSale: 189.0,
+  //     priceBeforeSale: 237.0,
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Ceramic Drink Coasters",
+  //     mainImage: "./shop/product-03-300x300.jpg",
+
+  //     priceAfterSale: 99.0,
+  //     priceBeforeSale: 157.0,
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Ceramic Garden Pots",
+  //     mainImage: "./shop/product-08-300x300.jpg",
+
+  //     priceAfterSale: 159.0,
+  //     priceBeforeSale: 179.0,
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Ceramic Pastel Plates",
+  //     mainImage: "./shop/product-06-300x300.jpg",
+
+  //     priceAfterSale: 209.0,
+  //     priceBeforeSale: 239.0,
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "Ceramic Plant Pots",
+  //     mainImage: "./shop/product-05-300x300.jpg",
+
+  //     priceAfterSale: 139.0,
+  //   },
+  //   {
+  //     id: 7,
+  //     name: "Ceramic Planter",
+  //     mainImage: "./shop/ceramic-planter-01-300x300.jpg",
+
+  //     priceAfterSale: 299.0,
+  //     priceBeforeSale: 349.0,
+  //   },
+  //   {
+  //     id: 8,
+  //     name: "Ceramic Plate",
+  //     mainImage: "./shop/product-01-300x300.jpg",
+
+  //     priceAfterSale: 119.0,
+  //     priceBeforeSale: 179.0,
+  //   },
+  //   {
+  //     id: 9,
+  //     name: "Ceramic Plates and Bowls",
+  //     mainImage: "./shop/product-02-300x300.jpg",
+
+  //     priceAfterSale: 209.0,
+  //     priceBeforeSale: 249.0,
+  //   },
+  //   {
+  //     id: 10,
+  //     name: "Ceramic Plates and Spoons",
+  //     mainImage: "./shop/product-07-300x300.jpg",
+
+  //     priceAfterSale: 299.0,
+  //     priceBeforeSale: 349.0,
+  //   },
+  //   {
+  //     id: 11,
+  //     name: "Ceramic Vases and Planters",
+  //     mainImage: "./shop/product-02-300x300.jpg",
+
+  //     priceAfterSale: 217.0,
+  //     priceBeforeSale: 247.0,
+  //   },
+  // ]);
 
   return (
     <>
@@ -36,7 +122,7 @@ function ShopPage() {
               <div className="pt-5">
                 <h6 className="text-[#A4A8A7] pb-2">Ceramic</h6>
                 <Link
-                  to={`/shop/product/${product.id}`}
+                  to={`/CeramicShop/shop/product/${product.id}`}
                   className="text-2xl text-main"
                 >
                   {product.name}

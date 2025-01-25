@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useLocation, useParams } from "react-router";
 import { ProductsContext } from "../../Context/ProductsContext";
 import Header from "../../Header";
 import Footer from "../../Footer";
@@ -12,31 +12,17 @@ function ProductPage() {
 
   const { ProductId } = useParams();
   const { products, addToCart } = useContext(ProductsContext);
+
+  const [randomProducts, setRandomProducts] = useState([]);
+  const location = useLocation();
+  useEffect(() => {
+    const shuffled = [...products].sort(() => 0.5 - Math.random());
+    setRandomProducts(shuffled.slice(0, 3));
+  }, [products, location]);
+
   const [section, setSection] = useState("description");
   const [reviews, setReviews] = useState([]);
-  const [relatedProducts, setRelatedProducts] = useState([
-    {
-      productId: 1,
-      ProductImg: "./shop/ceramic-cup-01-300x300.jpg",
-      productTitle: "Ceramic Cup",
-      productAfterSale: 189.0,
-      productBeforeSale: 237.0,
-    },
-    {
-      productId: 2,
-      ProductImg: "./shop/product-09-300x300.jpg",
-      productTitle: "Ceramic Bottles",
-      productAfterSale: 249.0,
-      productBeforeSale: 299.0,
-    },
-    {
-      productId: 3,
-      ProductImg: "./shop/product-03-300x300.jpg",
-      productTitle: "Ceramic Drink Coasters",
-      productAfterSale: 99.0,
-      productBeforeSale: 157.0,
-    },
-  ]);
+
   const [newReview, setNewReview] = useState({
     name: "",
     review: "",
@@ -44,7 +30,13 @@ function ProductPage() {
     isSaved: false,
   });
   const product = products.find((item) => item.id === parseInt(ProductId));
-  const [quantity, setQuantity] = useState(product.quantity);
+  const [quantity, setQuantity] = useState(1);
+
+  const [mainImage, setMainImage] = useState(product.mainImage);
+
+  useEffect(() => {
+    setMainImage(product.mainImage);
+  }, [product.mainImage]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -85,23 +77,26 @@ function ProductPage() {
       <Header />
       <div className="flex flex-wrap-reverse items-center justify-center gap-10 p-4 mt-10 mb-20">
         <div className="flex flex-wrap gap-10 ">
-          <div className="flex flex-wrap flex-row gap-2 sm:justify-center">
+          <div className="flex flex-wrap flex-col md:flex-row gap-2 sm:justify-center">
             {product.subImages.map((img, index) => {
               return (
                 <img
                   key={index}
                   src={img}
                   alt="Sub Image"
-                  className="border w-[150px] h-[150px] mb-5"
+                  className={`border w-[150px] h-[150px] mb-5 cursor-pointer ${
+                    mainImage === img ? "border-blue-500" : "border-gray-300"
+                  }`}
+                  onClick={() => setMainImage(img)}
                 />
               );
             })}
           </div>
-          <div>
+          <div className="w-[500px]">
             <img
-              src="./shop/ceramic-cup-01-300x300.jpg"
+              src={mainImage === product.mainImage ? `../.${mainImage}` : mainImage}
               alt="Main Image"
-              className="border w-[500px] h-[500px] max-w-full md:w-[300px] md:h-[300px]"
+              className="border w-full object-contain md:w-[350px]"
             />
           </div>
         </div>
@@ -333,32 +328,41 @@ function ProductPage() {
         )}
 
         <h1 className="text-main text-5xl mt-20">Related products</h1>
-        <div className="container mx-auto flex flex-wrap justify-center gap-5 items-center mt-5 ">
-          {relatedProducts.map((product) => (
+
+        <div className="container mx-auto flex flex-wrap justify-center gap-5 items-center mt-10 ">
+          {randomProducts.map((product) => (
             <div
-              key={product.productId}
-              className="w-[400px] h-[570px] relative "
+              key={product.id}
+              className="w-[400px] h-[570px] md:w-[150px] md:h-[300px] relative "
             >
-              <img src={product.ProductImg} alt="" className="w-full" />
-              <p className="absolute top-5 left-5 bg-white px-3 rounded-full">
+              <img src={`../.${product.mainImage}`} alt="" className="w-full" />
+              <p className="absolute top-5 left-5 md:left-2 bg-white px-3 rounded-full">
                 sale!
               </p>
-              <button className="bg-white p-2 rounded-full top-5 text-main right-5 absolute">
+              <button
+                className="bg-white p-2 rounded-full top-5 text-main right-5 md:right-2 absolute"
+                onClick={() => {
+                  addToCart(product);
+                }}
+              >
                 <FaShoppingCart />
               </button>
               <div className="pt-5 ">
                 <h6 className="text-[#A4A8A7] pb-2">Ceramic</h6>
                 <Link
-                  to={`/profiles/${product.productId}`}
-                  className="text-2xl text-main"
+                  to={`/CeramicShop/shop/product/${product.id}`}
+                  className="text-2xl md:text-lg text-main"
+                  onClick={() => {
+                    window.scrollTo(0, 0);
+                  }}
                 >
-                  {product.productTitle}
+                  {product.name}
                 </Link>
                 <div className="pt-3 font-bold flex gap-2 text-xl">
                   <span className="text-[#A4A8A7] line-through">
-                    ${product.productBeforeSale}.00
+                    ${product.priceBeforeSale}.00
                   </span>
-                  <span>${product.productAfterSale}.00</span>
+                  <span>${product.priceAfterSale}.00</span>
                 </div>
               </div>
             </div>

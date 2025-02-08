@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../Header";
 import Hero from "./Hero";
 import About from "./About";
@@ -10,6 +10,10 @@ import Testimonial from "./Testimonial";
 import Footer from "../../Footer";
 
 function HomePage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="overflow-x-hidden">
       <Header />

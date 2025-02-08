@@ -160,7 +160,7 @@ function Cart() {
               ))}
             </div>
 
-            <div className="w-[400px] md:w-[95%] border h-[350px] relative">
+            <div className="w-[400px] md:w-full border h-[350px] relative">
               <h1 className="bg-[#F1F4F1] px-5 py-3 text-main font-bold text-2xl">
                 Cart totals
               </h1>

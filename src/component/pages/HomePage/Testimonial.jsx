@@ -75,10 +75,10 @@ function Testimonial() {
         <div className="bg-main px-20 text-white w-[50%] lg:w-full md:h-[400px] h-[550px] ">
           <div className="md:text-center relative w-full h-full px-5 ">
             <div className="absolute top-[50%] transform translate-y-[-50%] lg:left-[50%] lg:translate-x-[-50%]">
-              <h1 className="text-5xl lg:text-2xl leading-snug pb-10 w-[550px] lg:w-[450px]">
+              <h1 className="text-5xl lg:text-2xl leading-snug pb-10 w-[550px] lg:w-[300px]">
                 Uncover the World of Ceramic Artistry Start Your Journey Here!
               </h1>
-              <button className="uppercase py-3 px-10 text-white transition duration-500 font-bold bg-main border border-2  hover:text-main hover:bg-white hover:border-main">
+              <button className="uppercase py-3 px-10 text-white transition duration-500 font-bold bg-main border-2  hover:text-main hover:bg-white hover:border-main">
                 Read more
               </button>
             </div>

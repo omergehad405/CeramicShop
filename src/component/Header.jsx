@@ -204,7 +204,7 @@ function Header() {
             <div
               className={`${
                 showCart === false ? "right-[-150rem]" : "right-0"
-              } w-[350px] min-h-[1000px] bg-white fixed z-10 p-5 top-0 transition-right duration-500 ease`}
+              } w-full h-[100vh] bg-white fixed z-10 py-5 top-0 transition-right duration-500 ease`}
             >
               <button
                 className="absolute top-5 right-5 text-black text-2xl"
@@ -218,7 +218,7 @@ function Header() {
                   there is no items in the cart
                 </p>
               ) : (
-                <div className="">
+                <div className="w-[90%] h-[75vh] mx-auto relative">
                   {cart.map((item) => (
                     <div
                       key={item.id}
@@ -266,16 +266,16 @@ function Header() {
                     </div>
                   ))}
 
-                  <div className="flex flex-col items-center mt-10  fixed top-[45rem]">
+                  <div className="absolute top-[100%] w-full">
                     <Link
                       to="/CeramicShop/cart"
-                      className="w-[310px] hover:text-white hover:bg-main transtition-text duration-500 text-center py-2 text-main border border-main my-2 font-bold uppercase tracking-widest"
+                      className="w-full block hover:text-white hover:bg-main transtition-text duration-500 text-center py-2 text-main border border-main my-2 font-bold uppercase tracking-widest"
                     >
                       view cart
                     </Link>
                     <Link
                       to="/CeramicShop/checkout"
-                      className="w-[310px] hover:text-white hover:bg-main transtition-text duration-500 text-center py-2 text-main border border-main my-2 font-bold uppercase tracking-widest"
+                      className="w-full block hover:text-main text-white bg-main hover:bg-main transtition-text duration-500 text-center py-2 border border-main my-2 font-bold uppercase tracking-widest"
                     >
                       checkout
                     </Link>

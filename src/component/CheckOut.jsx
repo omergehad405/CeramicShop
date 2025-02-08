@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { ProductsContext } from "./Context/ProductsContext";
@@ -36,6 +36,10 @@ function CheckOut() {
     }
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <Header />
@@ -56,7 +60,6 @@ function CheckOut() {
                   {index > 0}
                   {name}
                   <span className="ml-2 text-second font-normal">
-                    {" "}
                     is a required field.
                   </span>
                 </p>
@@ -237,7 +240,7 @@ function CheckOut() {
                 {cart.map((item) => (
                   <div
                     key={item.id}
-                    className="wfull border-t flex justify-between items-center px-5 py-5"
+                    className="w-full border-t flex justify-between items-center px-2 py-5"
                   >
                     <div className="flex justify-between items-center gap-2">
                       <img
@@ -245,8 +248,9 @@ function CheckOut() {
                         alt=""
                         className="w-[50px] rounded-md"
                       />
-                      <h1 className="text-second  capitalize">
-                        {item.name} x {item.quantity}
+                      <h1 className="text-second capitalize w-[150px]">
+                        {item.name}
+                        <span className="font-bold"> x {item.quantity}</span>
                       </h1>
                     </div>
                     <span className="text-second">
